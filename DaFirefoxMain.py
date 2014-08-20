@@ -167,16 +167,13 @@ class SimpleGrid(wx.grid.Grid):
 class Formulario(wx.Frame):
     def __init__(self, parent):
         # Cria Formulario
-        wx.Frame.__init__(self, parent, -1, "DA - Google Chrome Password Recovery - Desenvolvimento Aberto - 2014", size=(860, 350))
+        wx.Frame.__init__(self, parent, -1, "DA - Firefox Password Recovery - Desenvolvimento Aberto - 2014", size=(860, 350))
         panel = wx.Panel(self, wx.ID_ANY)
         
         # Centraliza tela
         self.Center()
 
-        # Cria Menu (Ubuntu WXPython Menu -- Error )
-        # Linux Ubuntu - não consegue mostrar os menus utilizando 
-        # componentes WX. erro ainda não foi corrigido
-        # Estes menus funcionam em Windows e Mac
+        # Cria Menu 
         menu = wx.Menu()
         menu.Append(5000, "S&alvar", "Exportar para texto")
         menu.Append(5001, "Sai&r", "Fechar o programa")
@@ -244,7 +241,7 @@ class Formulario(wx.Frame):
 
         file = open(arquivo, "w")
 
-        conteudo = "DA - Firefox Password Recovery - Powered by Desenvolvimento Aberto 2014\n\n" + \
+        conteudo = "DA -Firefox Password Recovery - Powered by Desenvolvimento Aberto 2014\n\n" + \
                    "Sistema Operacional: " + self.plataforma() + "\n" + \
                    "Estação: " + socket.gethostname() + "\n" + \
                    "Usuario: " + getpass.getuser() + "\n" + \
