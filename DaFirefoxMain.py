@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: latin-1 -*-
-# Vers„o 1.0 - Betha
+# Vers√£o 1.0 - Betha
 # DaFirefoxMain.py
  
 # The MIT License (MIT)
@@ -40,8 +40,8 @@ import base64
 import socket
  
 # Cria classe generica de uma WX.Grid
-# A classe abaixo faz parte da documentaÁ„o WXPython oficial
-# Este trecho de cÛdigo È util para manipular a grade
+# A classe abaixo faz parte da documenta√ß√£o WXPython oficial
+# Este trecho de c√≥digo √© util para manipular a grade
  
 class GenericTable(wx.grid.PyGridTableBase):
     def __init__(self, data, rowLabels = None, colLabels = None):
@@ -73,7 +73,7 @@ class GenericTable(wx.grid.PyGridTableBase):
     def SetValue(self, row, col, value):
         pass   
  
- # Clasees de struturas das senhas 
+ # Classes de estruturas de senha
 class SECItem(Structure):
    _fields_ = [('type',c_uint),('data',c_void_p),('len',c_uint)]
 
@@ -126,7 +126,7 @@ def lesignonDB(userpath,dbname):
       senha   = string_at(dectexto.data, dectexto.len)
       captura = [row[1], usuario, senha]
       dados.append(captura)  
-   # Fecha conexıes
+   # Fecha conex√µes
    c.close()
    conn.close()
    chave.NSS_Shutdown()
@@ -169,10 +169,13 @@ class Formulario(wx.Frame):
         # Cria Formulario
         wx.Frame.__init__(self, parent, -1, "DA - Google Chrome Password Recovery - Desenvolvimento Aberto - 2014", size=(860, 350))
         panel = wx.Panel(self, wx.ID_ANY)
+        
+        # Centraliza tela
+        self.Center()
 
         # Cria Menu (Ubuntu WXPython Menu -- Error )
-        # Linux Ubuntu - n„o consegue mostrar os menus utilizando 
-        # componentes WX. erro ainda n„o foi corrigido
+        # Linux Ubuntu - n√£o consegue mostrar os menus utilizando 
+        # componentes WX. erro ainda n√£o foi corrigido
         # Estes menus funcionam em Windows e Mac
         menu = wx.Menu()
         menu.Append(5000, "S&alvar", "Exportar para texto")
@@ -206,7 +209,7 @@ class Formulario(wx.Frame):
         self.Bind(wx.EVT_MENU, self.OnSair, id=5001)
         self.Bind(wx.EVT_MENU, self.OnSobre, id=6001)
         
-        # Cria botıes 
+        # Cria bot√µes 
         botao1 =   wx.Button(panel, label="Exportar TXT (Export)", pos=(580,280))
         botao1.Bind(wx.EVT_BUTTON, self.OnSalvar)
         
@@ -243,9 +246,9 @@ class Formulario(wx.Frame):
 
         conteudo = "Google Chrome Password Recovery - Powered by Desenvolvimento Aberto 2014\n\n" + \
                    "Sistema Operacional: " + self.plataforma() + "\n" + \
-                   "EstaÁ„o: " + socket.gethostname() + "\n" + \
+                   "Esta√ß√£o: " + socket.gethostname() + "\n" + \
                    "Usuario: " + getpass.getuser() + "\n" + \
-                   "Data ExtraÁ„o: " + datetime.datetime.today().strftime('%d-%b-%Y') + "\n\n" + \
+                   "Data Extra√ß√£o: " + datetime.datetime.today().strftime('%d-%b-%Y') + "\n\n" + \
                    "Registros encontrados: \n\n"
 
         for reg in dados:
@@ -270,7 +273,7 @@ class Formulario(wx.Frame):
         msg = wx.MessageBox(texto, 'Info', wx.OK | wx.ICON_INFORMATION)
         msg.ShowModal()
  
-# Inicializa a aplicaÁ„o
+# Inicializa a aplica√ß√£o
 app = wx.App()
 frame = Formulario(None)
 frame.Show(True)
