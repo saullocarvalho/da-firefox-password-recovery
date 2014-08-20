@@ -244,7 +244,7 @@ class Formulario(wx.Frame):
 
         file = open(arquivo, "w")
 
-        conteudo = "Google Chrome Password Recovery - Powered by Desenvolvimento Aberto 2014\n\n" + \
+        conteudo = "DA - Firefox Password Recovery - Powered by Desenvolvimento Aberto 2014\n\n" + \
                    "Sistema Operacional: " + self.plataforma() + "\n" + \
                    "Estação: " + socket.gethostname() + "\n" + \
                    "Usuario: " + getpass.getuser() + "\n" + \
